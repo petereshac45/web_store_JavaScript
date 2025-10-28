@@ -3,6 +3,12 @@ let screenValue = 0;
 let chargerValue = 0;
 let caseValue = 0;
 let lcdValue = 0;
+let priceScreen = 5;
+let priceLcd = 250;
+let priceSoct = 3;
+let priceSpeaker = 14;
+let priceCase = 12;
+let priceCharger = 20;
 let soctValue = 0;
 let speakerValue = 0;
 document.querySelector('.outputButon').addEventListener('click', function() {
@@ -14,7 +20,7 @@ document.querySelector('.outputButon').addEventListener('click', function() {
     else if (chargerInput) {
         chargerValue += chargerInput
         document.querySelector('.mainCharger').textContent = `charger : ${chargerValue}`;
-
+        document.querySelector('.chargerPrice').textContent = `price(5$): ${priceCharger*chargerValue}`
         document.querySelector('.input_charger').value = '';
     }
     if (screenValue < 0) return;
@@ -23,6 +29,7 @@ document.querySelector('.outputButon').addEventListener('click', function() {
 
 
         document.querySelector('.mainScreen').textContent = `screen : ${screenValue}`;
+        document.querySelector('.screenPrice').textContent = `price(5$): ${(priceScreen*screenValue)}`
         document.querySelector('.input_screen').value = ''
     }
     if (caseValue < 0) return;
@@ -30,6 +37,7 @@ document.querySelector('.outputButon').addEventListener('click', function() {
 
         caseValue += caseInput;
         document.querySelector('.mainCase').textContent = `case : ${caseValue}`;
+        document.querySelector('.casePrice').textContent = `price(20$): ${priceCase*caseValue}`
         document.querySelector('.input_case').value = '';
     }
 
@@ -41,6 +49,7 @@ document.querySelector('.output-main').addEventListener('click', function() {
     } else {
         btn.style.display = 'block';
     }
+
 });
 document.querySelector('.insideButon').addEventListener('click', function() {
     let lcdInput = Number(document.querySelector('.lcd_screen').value)
@@ -51,7 +60,7 @@ document.querySelector('.insideButon').addEventListener('click', function() {
     else if (lcdInput) {
         lcdValue += lcdInput
         document.querySelector('.mainLcd').textContent = `Lcd : ${lcdValue}`;
-
+        document.querySelector('.lcdPrice').textContent = `price(250$): ${priceLcd*lcdValue}`
         document.querySelector('.lcd_screen').value = '';
     }
 
@@ -61,6 +70,7 @@ document.querySelector('.insideButon').addEventListener('click', function() {
 
 
         document.querySelector('.mainSoct').textContent = `Soct : ${soctValue}`;
+        document.querySelector('.soctPrice').textContent = `price(3$): ${priceSoct*soctValue}`
         document.querySelector('.soct_screen').value = ''
     }
 
@@ -69,7 +79,7 @@ document.querySelector('.insideButon').addEventListener('click', function() {
 
         speakerValue += speakerInput;
         document.querySelector('.mainSpeaker').textContent = `Speaker : ${speakerValue}`;
-
+        document.querySelector('.speakerPrice').textContent = `price(14$): ${priceSpeaker*lcdValue}`
         document.querySelector('.speaker_screen').value = '';
     }
 
