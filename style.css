@@ -10,7 +10,7 @@
 }
 
 .parent h1 {
-    font-size: 80px;
+    font-size: clamp(40px, 4vw, 80px);
     height: 30px;
     text-shadow: 0 0 20px white;
 }
@@ -78,6 +78,7 @@
 
 .parent .products .inputStore .output h2 {
     align-self: center;
+    font-size: clamp(19px, 2vw, 30px);
 }
 
 .parent .products .inputStore .output input {
@@ -128,8 +129,40 @@
 
 .parent .products .inputStore .inside h2 {
     align-self: center;
+    font-size: clamp(19px, 2vw, 30px);
 }
 
 .parent .products .inputStore .inside input {
     width: 50px;
+}
+
+@media (max-width:400px) {
+    .parent .products {
+        width: 100%;
+        padding: 0;
+    }
+    .parent .products .inputStore .output {
+        display: flex;
+        padding-left: 12px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .parent .products .inputStore .inside {
+        display: flex;
+        padding-left: 12px;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width:960px) {
+    .parent .products {
+        display: flex;
+        width: 80%;
+        padding: 20px;
+        flex-direction: column;
+    }
+    .parent .products .mainStore {
+        width: 70%;
+    }
 }
